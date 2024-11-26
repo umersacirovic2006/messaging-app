@@ -4,9 +4,6 @@ export type ChatType = {
     university: string;
     id: number;
     ip: string;
-};
-
-export type ChatTypeObj = {
     obj: {
         firstName: string;
         image: string;
@@ -15,3 +12,4 @@ export type ChatTypeObj = {
         ip: string;
     };
 };
+

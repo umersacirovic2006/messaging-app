@@ -3,23 +3,26 @@ import axios from "axios";
 import Chat from "../Chat";
 import "./index.scss";
 import { useEffect, useState } from "react";
-import { ChatType, ChatTypeObj } from "../Chat/index.d";
+import { ChatType } from "../Chat/index.d";
 // import { RootState } from "../../store/store";
 
 const Home = () => {
-    const [obj, setObj] = useState<ChatTypeObj>();
+    const [obj, setObj] = useState<ChatType[]>([]);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        axios.get("https://dummyjson.com/users").then((response) => {
-            setObj(response.data.users);
-            setIsLoaded(true);
-        });
+        axios
+            .get("https://dummyjson.com/users")
+            .then((response) => {
+                setObj(response.data.users);
+                setIsLoaded(true);
+            })
+            .catch((err) => {
+                setError(err.message);
+                setIsLoaded(true);
+            });
     }, []);
-
-    if (isLoaded) {
-        console.log(obj);
-    }
     // const count = useSelector((state: RootState) => state.counter.value)
     // const dispatch = useDispatch()
 
@@ -33,10 +36,12 @@ const Home = () => {
                 </div>
             </nav>
             <div className="chats">
-                {isLoaded && obj ? (
-                    obj?.map((dataObj: ChatType, index: number) => (
+                {error ? (
+                    <h1 className="error">Error: {error}</h1>
+                ) : isLoaded && obj ? (
+                    obj.map((dataObj: ChatType) => (
                         <Chat
-                            key={index}
+                            key={dataObj.id} 
                             id={dataObj.id}
                             firstName={dataObj.firstName}
                             image={dataObj.image}
