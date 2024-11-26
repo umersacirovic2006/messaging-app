@@ -1,0 +1,45 @@
+@import "../../index.scss";
+
+.Home {
+    margin: 5vh 15%;
+    padding: 3rem;
+    width: auto;
+    background-color: $neutral;
+
+    nav {
+        border-bottom: 1px solid $secondary;
+        position: sticky;
+        top: 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 5rem;
+        background-color: $neutral;
+        z-index: 1;
+
+        button {
+            border: 1px solid $neutral;
+            padding: 1rem;
+            background-color: $neutral;
+            text-decoration: none;
+            border-radius: 10rem;
+            transition: 0.3s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .chats {
+        margin: 2vh 2vw;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        .loading {
+            text-align: center;
+        }
+    }
+}

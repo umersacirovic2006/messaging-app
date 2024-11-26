@@ -1,0 +1,20 @@
+@import '../../index.scss';
+
+.MobilePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 99vh;
+    gap: 1rem;
+
+    button {
+        border: 1px solid $neutral;
+        padding: 1rem;
+        background-color: $neutral;
+        text-decoration: none;
+        border-radius: 10rem;
+        transition: 0.6s ease-in-out;
+        cursor: pointer;
+    }
+}

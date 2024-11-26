@@ -1,0 +1,28 @@
+@import '../../index.scss';
+
+.Header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 5rem;
+
+    button, a {
+        border: 1px solid $neutral;
+        padding: 1rem;
+        background-color: $neutral;
+        text-decoration: none;
+        border-radius: 10rem;
+        transition: 0.6s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    .links {
+        width: 10%;
+        display: flex;
+        gap: 25%;
+    }
+}

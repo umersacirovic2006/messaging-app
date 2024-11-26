@@ -1,0 +1,85 @@
+@import "../../../index.scss";
+
+.ChatPage {
+    margin: 5vh 15%;
+    padding: 3rem;
+    width: auto;
+    background-color: $neutral;
+    position: relative;
+    min-height: 80vh;
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $secondary;
+        position: sticky;
+        top: 0;
+        padding: 1rem;
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            img {
+                height: 3rem;
+                width: 3rem;
+            }
+        }
+
+        .right {
+            display: flex;
+            gap: 2rem;
+
+            button {
+                background-color: transparent;
+                border: none;
+            }
+        }
+    }
+
+    .chat {
+        padding-top: 5vh;
+        margin-bottom: 80px;
+    }
+
+    .input-container {
+        position: fixed;
+        bottom: 0;
+        left: 15%;
+        right: 15%;
+        padding: 1rem;
+        background-color: $neutral;
+        display: flex;
+        gap: 1rem;
+        border-top: 1px solid $secondary;
+
+        input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid $secondary;
+            border-radius: 4px;
+            font-size: 1rem;
+            
+            &:focus {
+                outline: none;
+                border-color: $primary;
+            }
+        }
+
+        button {
+            padding: 0.8rem 1.5rem;
+            background-color: $primary;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+
+            &:hover {
+                background-color: darken($primary, 10%);
+            }
+        }
+    }
+}
